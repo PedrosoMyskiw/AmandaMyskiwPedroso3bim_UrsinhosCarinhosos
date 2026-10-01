@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Cargos & Guardiões - Ursinhos Carinhosos</title>
+    <link rel="stylesheet" href="cargo.css">
+</head>
+
+<body onload="listar()">
+    <!-- Cabeçalho Mágico -->
+    <header>
+        <div class="logo-area">
+            <span class="logo-icon">👑</span>
+            <h1>Cargos & Guardiões</h1>
+        </div>
+        <p>Reino do Carinho • Gerenciamento de Funções da Equipe</p>
+    </header>
+
+    <main class="container-master">
+        <div class="conteudo-principal">
+            <section class="form-esquerda">
+                <h2><span>🏷️</span> Dados do Cargo</h2>
+                
+                <label for="inputId_cargo">ID do Cargo</label>
+                <div class="linha-id">
+                    <input type="number" name="inputId_cargo" id="inputId_cargo" placeholder="Ex: 1" min="1">
+                    <input type="button" value="Procure 🔍" id="btProcure" onclick="procure()">
+                    <input type="button" value="Inserir ✨" id="btInserir" onclick="inserir()" style="display:none;">
+                    <input type="button" value="Alterar ✏️" id="btAlterar" onclick="alterar()" style="display:none;">
+                    <input type="button" value="Excluir 🗑️" id="btExcluir" onclick="excluir()" style="display:none;">
+                </div>
+
+                <label for="inputNome_cargo">Nome do Cargo / Função</label>
+                <input type="text" name="inputNome_cargo" id="inputNome_cargo" placeholder="Ex: Guardião das Pelúcias">
+
+                <div id="divAviso">Informe o ID do cargo e clique em Procure</div>
+
+                <div class="botoes-acao">
+                    <input type="button" value="Salvar 💾" id="btSalvar" onclick="salvar()" style="display:none;">
+                    <input type="button" value="Cancelar ❌" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+                </div>
+            </section>
+        </div>
+
+        <section class="lista-cargos">
+            <h3><span>⭐</span> Cargos Cadastrados no Reino</h3>
+            <div id="outputSaida">Carregando...</div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Loja Ursinhos Carinhosos. Espalhando amor e magia em forma de pelúcia.</p>
+    </footer>
+
+    <script src="./cargo.js"></script>
+</body>
+
+</html>

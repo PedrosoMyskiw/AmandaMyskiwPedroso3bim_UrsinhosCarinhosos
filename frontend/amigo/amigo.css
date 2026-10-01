@@ -1,0 +1,330 @@
+/* --- Import de Fonte Soft & Rounded --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Variáveis de Cores (Ursinhos Carinhosos) --- */
+:root {
+    --cor-primaria: #6c5ce7;          /* Roxo Mágico */
+    --cor-secundaria: #ff7675;        /* Rosa Sol */
+    --cor-fundo: #f0f3ff;             /* Azul Céu Suave */
+    --cor-card-bg: #ffffff;
+    --cor-texto: #2d3436;
+    --cor-texto-suave: #636e72;
+    --cor-borda: #dfe6e9;
+    --cor-amarelo: #ffeaa7;           /* Estrela */
+    --cor-sucesso: #00b894;
+    --cor-perigo: #d63031;
+    --cor-gradiente-head: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+/* --- Estrutura Geral --- */
+body {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    background-color: var(--cor-fundo);
+    background-image: radial-gradient(#e0e6ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Semântico --- */
+header {
+    background: var(--cor-gradiente-head);
+    color: #ffffff;
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.25);
+    border-bottom: 5px solid var(--cor-amarelo);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.logo-icon {
+    font-size: 2.4rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* --- Container Principal --- */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 950px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Seção de Formulário (Card Principal) --- */
+.form-section, .list-section {
+    background-color: var(--cor-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.08);
+    border: 3px solid #ffffff;
+    margin-bottom: 2rem;
+}
+
+h2, h3 {
+    color: var(--cor-primaria);
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- Barra de Busca e Botões Principais --- */
+.search-container {
+    background-color: #fafbff;
+    border: 2px solid #eef2ff;
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-container label {
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.search-input-group {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-input-group input[type="number"] {
+    max-width: 180px;
+}
+
+/* --- Botões Customizados --- */
+button {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btnBuscar {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+#btnBuscar:hover { background-color: #5b4bc4; transform: translateY(-2px); }
+
+.btn-primary {
+    background-color: var(--cor-sucesso);
+    color: #ffffff;
+}
+.btn-primary:hover { background-color: #00997b; transform: translateY(-2px); }
+
+.btn-secondary {
+    background-color: #fdcb6e;
+    color: var(--cor-texto);
+}
+.btn-secondary:hover { background-color: #e1b12c; transform: translateY(-2px); }
+
+.btn-danger {
+    background-color: var(--cor-perigo);
+    color: #ffffff;
+}
+.btn-danger:hover { background-color: #b22222; transform: translateY(-2px); }
+
+.btn-save {
+    background-color: #0984e3;
+    color: #ffffff;
+}
+.btn-save:hover { background-color: #076baf; transform: translateY(-2px); }
+
+.btn-cancel {
+    background-color: #b2bec3;
+    color: #ffffff;
+}
+.btn-cancel:hover { background-color: #636e72; transform: translateY(-2px); }
+
+/* --- Fieldset e Inputs Gerais --- */
+fieldset#formFields {
+    border: 2px dashed #dcdde1;
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+    margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafbff;
+}
+
+input:focus, select:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+    background-color: #ffffff;
+}
+
+/* --- Seção de Herança (1 para 1: Guardião / Amigo Colecionador) --- */
+.umParaum {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.funcionario, .cliente {
+    background-color: #f8f9fe;
+    border: 2px solid #eef2ff;
+    border-radius: 14px;
+    padding: 1.2rem;
+    transition: border-color 0.2s;
+}
+
+.funcionario:hover, .cliente:hover {
+    border-color: #a29bfe;
+}
+
+.checkbox-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: 0.8rem;
+}
+
+.checkbox-header input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--cor-primaria);
+    cursor: pointer;
+}
+
+.campos-sub {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.campos-sub label {
+    margin-bottom: 0;
+    margin-left: 0.4rem;
+}
+
+.campos-sub input, .campos-sub select {
+    max-width: 220px;
+}
+
+/* --- Tabela de Exibição --- */
+.table-container {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid var(--cor-borda);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 0.85rem;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.75rem 0.85rem;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fe;
+}
+
+/* --- Mensagens de Notificação --- */
+.message-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--cor-amarelo);
+}

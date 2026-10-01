@@ -1,0 +1,161 @@
+/* --- Import de Fonte Soft & Rounded --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Variáveis de Cores (Paleta Ursinhos Carinhosos) --- */
+:root {
+    --cor-primaria: #6c5ce7;          /* Roxo Mágico / Ursinho Carinhoso */
+    --cor-secundaria: #ff7675;        /* Rosa Sol / Coração */
+    --cor-fundo: #f0f3ff;             /* Azul Céu Suave / Nuvem */
+    --cor-card-bg: #ffffff;
+    --cor-texto: #2d3436;             /* Escuro Leitura */
+    --cor-texto-suave: #636e72;
+    --cor-borda: #dfe6e9;
+    --cor-amarelo: #ffeaa7;           /* Sol / Estrela */
+    --cor-gradiente-head: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+/* --- Estrutura Geral --- */
+body {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    background-color: var(--cor-fundo);
+    background-image: radial-gradient(#e0e6ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Semântico --- */
+header {
+    background: var(--cor-gradiente-head);
+    color: #ffffff;
+    padding: 2.5rem 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.25);
+    border-bottom: 5px solid var(--cor-amarelo);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.logo-icon {
+    font-size: 2.6rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* --- Main (Conteúdo Central) --- */
+main.container-master {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 3.5rem auto;
+    padding: 0 1.5rem;
+}
+
+/* --- Grid de Opções (Organização Fixa 2x2) --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Força exatamente 2 colunas */
+    gap: 2rem;
+}
+
+.card-menu {
+    background-color: var(--cor-card-bg);
+    padding: 2.5rem 1.8rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 16px rgba(108, 92, 231, 0.08);
+    text-decoration: none;
+    color: var(--cor-texto);
+    text-align: center;
+    border: 3px solid #ffffff;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.card-menu:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 16px 30px rgba(255, 118, 117, 0.25);
+}
+
+.card-icon {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    background-color: #fff4f4;
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(255, 118, 117, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.card-menu:nth-child(2) .card-icon { background-color: #f3f0ff; }
+.card-menu:nth-child(3) .card-icon { background-color: #fff9e6; }
+.card-menu:nth-child(4) .card-icon { background-color: #e6fffa; }
+
+.card-menu:hover .card-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.card-menu h2 {
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.card-menu p {
+    font-size: 0.95rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.5;
+}
+
+/* --- Ajuste Responsivo (Em celulares muito pequenos vira 1 coluna) --- */
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Footer Semântico --- */
+footer {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.8rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--cor-amarelo);
+}

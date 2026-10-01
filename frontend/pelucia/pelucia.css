@@ -1,0 +1,627 @@
+/* --- Import de Fonte Soft & Rounded --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Variáveis de Cores (Ursinhos Carinhosos) --- */
+:root {
+    --cor-primaria: #6c5ce7;          /* Roxo Mágico */
+    --cor-secundaria: #ff7675;        /* Rosa Sol */
+    --cor-fundo: #f0f3ff;             /* Azul Céu Suave */
+    --cor-card-bg: #ffffff;
+    --cor-texto: #2d3436;
+    --cor-texto-suave: #636e72;
+    --cor-borda: #dfe6e9;
+    --cor-amarelo: #ffeaa7;           /* Estrela */
+    --cor-sucesso: #00b894;
+    --cor-perigo: #d63031;
+    --cor-gradiente-head: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+/* --- Estrutura Geral --- */
+body {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    background-color: var(--cor-fundo);
+    background-image: radial-gradient(#e0e6ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Semântico --- */
+header {
+    background: var(--cor-gradiente-head);
+    color: #ffffff;
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.25);
+    border-bottom: 5px solid var(--cor-amarelo);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.logo-icon {
+    font-size: 2.4rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* --- Main Layout --- */
+main.container-master {
+    flex: 1;
+    width: 100%;
+    max-width: 1050px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.conteudo-principal {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .conteudo-principal {
+        flex-direction: column;
+    }
+}
+
+/* --- Seções do Form / Cards --- */
+.form-esquerda, .form-direita, .lista-produto {
+    background-color: var(--cor-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.08);
+    border: 3px solid #ffffff;
+}
+
+.form-esquerda {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-direita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2, h3 {
+    color: var(--cor-primaria);
+    font-size: 1.35rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- Labels e Inputs --- */
+label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafbff;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+    background-color: #ffffff;
+}
+
+/* --- Linha ID com Botões de Ação CRUD --- */
+.linha-id {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.linha-id input[type="text"] {
+    max-width: 110px;
+}
+
+/* --- Botões Estilizados --- */
+input[type="button"] {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos Específicos por Botão */
+#btProcure {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+
+#btProcure:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-2px);
+}
+
+#btInserir, #btSalvar {
+    background-color: var(--cor-sucesso);
+    color: #ffffff;
+}
+
+#btInserir:hover, #btSalvar:hover {
+    background-color: #00997b;
+    transform: translateY(-2px);
+}
+
+#btAlterar {
+    background-color: #fdcb6e;
+    color: #2d3436;
+}
+
+#btAlterar:hover {
+    background-color: #e1b12c;
+    transform: translateY(-2px);
+}
+
+#btExcluir, #btCancelar {
+    background-color: var(--cor-perigo);
+    color: #ffffff;
+}
+
+#btExcluir:hover, #btCancelar:hover {
+    background-color: #b22222;
+    transform: translateY(-2px);
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+/* --- Mensagem de Aviso --- */
+#divAviso {
+    margin-top: 1.2rem;
+    padding: 0.8rem 1rem;
+    background-color: #fff9e6;
+    border-left: 4px solid #ffeaa7;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #d63031;
+    font-weight: 600;
+}
+
+/* --- Foto / Upload --- */
+.instrucao-imagem {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 1rem;
+}
+
+.img-container {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--cor-secundaria);
+    box-shadow: 0 6px 15px rgba(255, 118, 117, 0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    background-color: #fff4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container:hover {
+    transform: scale(1.04) rotate(3deg);
+    border-color: var(--cor-primaria);
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Tabela / Listagem de Saída --- */
+.lista-produto {
+    margin-top: 1rem;
+}
+
+#outputSaida table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#outputSaida th {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+#outputSaida td {
+    padding: 0.75rem 0.8rem;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+}
+
+#outputSaida tr:hover {
+    background-color: #f8f9fe;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--cor-amarelo);
+}/* --- Import de Fonte Soft & Rounded --- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Variáveis de Cores (Ursinhos Carinhosos) --- */
+:root {
+    --cor-primaria: #6c5ce7;          /* Roxo Mágico */
+    --cor-secundaria: #ff7675;        /* Rosa Sol */
+    --cor-fundo: #f0f3ff;             /* Azul Céu Suave */
+    --cor-card-bg: #ffffff;
+    --cor-texto: #2d3436;
+    --cor-texto-suave: #636e72;
+    --cor-borda: #dfe6e9;
+    --cor-amarelo: #ffeaa7;           /* Estrela */
+    --cor-sucesso: #00b894;
+    --cor-perigo: #d63031;
+    --cor-gradiente-head: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+}
+
+/* --- Estrutura Geral --- */
+body {
+    font-family: 'Fredoka', 'Quicksand', sans-serif;
+    background-color: var(--cor-fundo);
+    background-image: radial-gradient(#e0e6ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Semântico --- */
+header {
+    background: var(--cor-gradiente-head);
+    color: #ffffff;
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.25);
+    border-bottom: 5px solid var(--cor-amarelo);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0.2rem;
+}
+
+.logo-icon {
+    font-size: 2.4rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* --- Main Layout --- */
+main.container-master {
+    flex: 1;
+    width: 100%;
+    max-width: 1050px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.conteudo-principal {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .conteudo-principal {
+        flex-direction: column;
+    }
+}
+
+/* --- Seções do Form / Cards --- */
+.form-esquerda, .form-direita, .lista-produto {
+    background-color: var(--cor-card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.08);
+    border: 3px solid #ffffff;
+}
+
+.form-esquerda {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-direita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2, h3 {
+    color: var(--cor-primaria);
+    font-size: 1.35rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- Labels e Inputs --- */
+label {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--cor-texto-suave);
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--cor-borda);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fafbff;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+    background-color: #ffffff;
+}
+
+/* --- Linha ID com Botões de Ação CRUD --- */
+.linha-id {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.linha-id input[type="text"] {
+    max-width: 110px;
+}
+
+/* --- Botões Estilizados --- */
+input[type="button"] {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos Específicos por Botão */
+#btProcure {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+}
+
+#btProcure:hover {
+    background-color: #5b4bc4;
+    transform: translateY(-2px);
+}
+
+#btInserir, #btSalvar {
+    background-color: var(--cor-sucesso);
+    color: #ffffff;
+}
+
+#btInserir:hover, #btSalvar:hover {
+    background-color: #00997b;
+    transform: translateY(-2px);
+}
+
+#btAlterar {
+    background-color: #fdcb6e;
+    color: #2d3436;
+}
+
+#btAlterar:hover {
+    background-color: #e1b12c;
+    transform: translateY(-2px);
+}
+
+#btExcluir, #btCancelar {
+    background-color: var(--cor-perigo);
+    color: #ffffff;
+}
+
+#btExcluir:hover, #btCancelar:hover {
+    background-color: #b22222;
+    transform: translateY(-2px);
+}
+
+.botoes-acao {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+/* --- Mensagem de Aviso --- */
+#divAviso {
+    margin-top: 1.2rem;
+    padding: 0.8rem 1rem;
+    background-color: #fff9e6;
+    border-left: 4px solid #ffeaa7;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #d63031;
+    font-weight: 600;
+}
+
+/* --- Foto / Upload --- */
+.instrucao-imagem {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 1rem;
+}
+
+.img-container {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--cor-secundaria);
+    box-shadow: 0 6px 15px rgba(255, 118, 117, 0.25);
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    background-color: #fff4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container:hover {
+    transform: scale(1.04) rotate(3deg);
+    border-color: var(--cor-primaria);
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Tabela / Listagem de Saída --- */
+.lista-produto {
+    margin-top: 1rem;
+}
+
+#outputSaida table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#outputSaida th {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+#outputSaida td {
+    padding: 0.75rem 0.8rem;
+    border-bottom: 1px solid var(--cor-borda);
+    font-size: 0.9rem;
+}
+
+#outputSaida tr:hover {
+    background-color: #f8f9fe;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: var(--cor-primaria);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--cor-amarelo);
+}

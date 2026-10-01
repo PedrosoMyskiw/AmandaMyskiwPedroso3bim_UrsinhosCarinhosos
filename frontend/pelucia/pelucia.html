@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Pelúcias - Ursinhos Carinhosos</title>
+    <link rel="stylesheet" href="pelucia.css">
+</head>
+
+<body onload="inicializar()">
+    <!-- Cabeçalho Mágico -->
+    <header>
+        <div class="logo-area">
+            <span class="logo-icon">🌈</span>
+            <h1>Catálogo de Pelúcias</h1>
+        </div>
+        <p>Reino do Carinho • Cadastro e Controle de Estoque de Ursinhos</p>
+    </header>
+
+    <main class="container-master">
+        <div class="conteudo-principal">
+            <!-- Formulário de Dados da Pelúcia -->
+            <section class="form-esquerda">
+                <h2><span>🧸</span> Dados da Pelúcia</h2>
+                
+                <label for="inputId_pelucia">ID das Pelúcias</label>
+                <div class="linha-id">
+                    <input type="text" name="inputId_pelucia" id="inputId_pelucia" placeholder="Ex: 1">
+                    <input type="button" value="Procure 🔍" id="btProcure" onclick="procure()">
+                    <input type="button" value="Inserir ✨" id="btInserir" onclick="inserir()" style="display:none;">
+                    <input type="button" value="Alterar ✏️" id="btAlterar" onclick="alterar()" style="display:none;">
+                    <input type="button" value="Excluir 🗑️" id="btExcluir" onclick="excluir()" style="display:none;">
+                </div>
+
+                <label for="inputNome_pelucia">Nome do Ursinho (Pelúcia)</label>
+                <input type="text" name="inputNome_pelucia" id="inputNome_pelucia" placeholder="Ex: Ursinho Sol">
+
+                <label for="selectId_formato">Formato de Envio / Unidade</label>
+                <select name="selectId_formato" id="selectId_formato" disabled>
+                    <option value="">Carregando...</option>
+                </select>
+
+                <label for="inputQuantidade_estoque_pelucia">Quantidade em Estoque</label>
+                <input type="number" name="inputQuantidade_estoque_pelucia" id="inputQuantidade_estoque_pelucia" placeholder="0">
+
+                <label for="inputPreco_unitario_pelucia">Preço Unitário (R$)</label>
+                <input type="number" step="0.01" name="inputPreco_unitario_pelucia" id="inputPreco_unitario_pelucia" placeholder="0,00">
+
+                <div id="divAviso">Informe o ID e clique em Procure</div>
+
+                <div class="botoes-acao">
+                    <input type="button" value="Salvar 💾" id="btSalvar" onclick="salvar()" style="display:none;">
+                    <input type="button" value="Cancelar ❌" id="btCancelar" onclick="cancelarOperacao()" style="display:none;">
+                </div>
+            </section>
+
+            <!-- Painel de Foto da Pelúcia -->
+            <aside class="form-direita">
+                <h2><span>📸</span> Foto da Pelúcia</h2>
+                <p class="instrucao-imagem">(Clique na imagem para alterar)</p>
+                <div class="img-container">
+                    <img id="imgPelucia" src="http://localhost:3001/imagens/silhueta.png" alt="Imagem da Pelucia" onclick="acionarUpload()">
+                    <input type="file" id="inputImagem" accept="image/*" style="display: none;" onchange="previewImagem()">
+                </div>
+            </aside>
+        </div>
+
+        <!-- Listagem/Tabela do CRUD -->
+        <section class="lista-produto">
+            <h3><span>⭐</span> Pelúcias Cadastradas no Reino</h3>
+            <div id="outputSaida">Carregando...</div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Loja Ursinhos Carinhosos. Espalhando amor e magia em forma de pelúcia.</p>
+    </footer>
+
+    <script src="./pelucia.js"></script>
+</body>
+
+</html>

@@ -1,1 +1,1 @@
-# AmandaMyskiwPedroso3bim_UrsinhosCarinhosos
+Projeto exemplo com menu e 2 Cruds (produto e unidade de medida)

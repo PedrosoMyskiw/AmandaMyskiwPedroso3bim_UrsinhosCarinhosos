@@ -1,0 +1,206 @@
+:root {
+  --primary: #ff85a1;
+  --primary-hover: #ff6083;
+  --secondary: #a2d2ff;
+  --accent: #cdb4db;
+  --bg-color: #f8f7ff;
+  --text-color: #4a4e69;
+  --white: #ffffff;
+  --shadow: 0 8px 20px rgba(255, 133, 161, 0.15);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom: 50px;
+}
+
+/* Header */
+.header {
+  background: var(--white);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.icon-logo {
+  font-size: 1.8rem;
+  color: var(--accent);
+}
+
+.btn-cart {
+  background: var(--secondary);
+  color: #1d3557;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-cart:hover {
+  background-color: #8ecafe;
+  transform: scale(1.05);
+}
+
+.badge {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+}
+
+/* Banner Hero */
+.hero {
+  background: linear-gradient(135deg, #cdb4db, #ffc8dd, #ffafcc);
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #4a4e69;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Container de Produtos */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.title-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary);
+  font-size: 1.8rem;
+}
+
+/* Grid layout */
+.grid-pelucias {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards */
+.card-pelucia {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-pelucia:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(255, 133, 161, 0.25);
+}
+
+.badge-estoque {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #38b000;
+}
+
+.img-pelucia {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: #f1f1f1;
+}
+
+.card-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.formato-tag {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.nome-pelucia {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+.preco {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  margin-top: auto;
+}
+
+.btn-comprar {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-comprar:hover {
+  background: var(--primary-hover);
+}
+
+.btn-comprar:active {
+  transform: scale(0.98);
+}

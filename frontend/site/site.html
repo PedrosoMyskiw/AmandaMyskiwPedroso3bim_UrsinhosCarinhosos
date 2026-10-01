@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Ursinhos Carinhosos - Reino do Carinho</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Cabeçalho / Navbar -->
+  <header class="header">
+    <div class="logo">
+      <i class="fa-solid fa-cloud-sun icon-logo"></i>
+      <span>Reino do Carinho</span>
+    </div>
+    <div class="cart-container">
+      <button id="btn-carrinho" class="btn-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Carrinho</span>
+        <span id="cart-count" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Banner Principal -->
+  <section class="hero">
+    <h1>Adote seu Ursinho Carinhoso 🌈</h1>
+    <p>Espalhe amor e magia com as pelúcias mais fofas da Nuvem Rosa!</p>
+  </section>
+
+  <!-- Vitrine de Produtos -->
+  <main class="container">
+    <h2 class="title-section">Pelúcias Disponíveis</h2>
+    <div id="grid-pelucias" class="grid-pelucias">
+      
+      <!-- Card de Exemplo (Será gerado dinamicamente via JS) -->
+      <div class="card-pelucia">
+        <div class="badge-estoque">Em estoque</div>
+        <img src="http://localhost:3001/imagens/1.png" alt="Ursinho Carinhoso Clássico" class="img-pelucia" onerror="this.src='https://via.placeholder.com/300?text=Pelucia'">
+        <div class="card-body">
+          <span class="formato-tag">Unidade Mágica</span>
+          <h3 class="nome-pelucia">Ursinho Carinhoso Clássico</h3>
+          <p class="preco">R$ 55,00</p>
+          <button class="btn-comprar">
+            <i class="fa-solid fa-heart"></i> Adicionar ao Carrinho
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
